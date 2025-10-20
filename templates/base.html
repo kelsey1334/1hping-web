@@ -1,94 +1,20 @@
 <!doctype html>
-<html lang="vi">
+<html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hi88 - Hi88.com Link Đăng Nhập Cá Cược Thể Thao Uy Tín</title>
-  <meta name="description" content="Hi88 là nhà cái cá cược trực tuyến uy tín hàng đầu châu Á. Tỷ lệ kèo hấp dẫn, khuyến mãi thường xuyên, CSKH tận tâm, bảo mật hiện đại.">
-  <link rel="preload" as="image" href="assets/slider_1.svg">
-  <link rel="preload" as="image" href="assets/slider_2.svg">
-  <link rel="stylesheet" href="styles.css">
+  <title>1hping Web</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
-      <a href="/" class="logo" aria-label="Hi88">
-        <span class="logo-badge">H</span> Hi88
-      </a>
-      <div class="nav-actions">
-        <a class="btn btn-outline" href="/dang-nhap" rel="nofollow">Đăng nhập</a>
-        <a class="btn btn-primary" href="/dang-ky" rel="nofollow">Đăng ký</a>
-      </div>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="slider">
-      <div class="slide active">
-        <img src="assets/slider_1.svg" alt="Slider 1">
-      </div>
-      <div class="slide">
-        <img src="assets/slider_2.svg" alt="Slider 2">
-      </div>
-    </div>
-    <div class="hero-overlay">
-      <div class="container hero-content">
-        <h1 class="hero-title rainbow-text"><strong>Hi88 - Hi88.com Link Đăng Nhập Cá Cược Thể Thao Uy Tín</strong></h1>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="/dang-ky" rel="nofollow">Đăng ký</a>
-          <a class="btn btn-outline" href="/dang-nhap" rel="nofollow">Đăng nhập</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <main class="container">
-    <section class="section">
-      <p>
-        <a href="https://coa.jp.net/"><strong>Hi88</strong></a> là nhà cái cá cược trực tuyến uy tín hàng đầu tại châu Á, cung cấp hệ sinh thái giải trí đa dạng gồm cá cược thể thao, live casino, slot game, bắn cá và game bài đổi thưởng. Ưu thế của Hi88 nằm ở tỷ lệ kèo hấp dẫn, khuyến mãi thường xuyên, dịch vụ chăm sóc khách hàng tận tâm cùng công nghệ bảo mật hiện đại, mang lại trải nghiệm cá cược an toàn, tiện lợi và đẳng cấp cho người chơi.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Bài viết mới nhất</h2>
-      <div class="posts">
-        <article class="card">
-          <img class="card-img" src="assets/slider_1.svg" alt="Bài viết 1">
-          <div class="card-body">
-            <h3 class="card-title">Hướng dẫn đăng ký tài khoản Hi88</h3>
-            <div class="card-meta">3 phút đọc • Thủ thuật</div>
-            <p class="card-text">Các bước tạo tài khoản nhanh, xác minh an toàn và mẹo thiết lập bảo mật hai lớp để bảo vệ tài khoản.</p>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card-img" src="assets/slider_2.svg" alt="Bài viết 2">
-          <div class="card-body">
-            <h3 class="card-title">Kinh nghiệm đặt kèo thể thao hiệu quả</h3>
-            <div class="card-meta">5 phút đọc • Kèo cược</div>
-            <p class="card-text">Quản lý vốn, chọn kèo, theo dõi biến động tỷ lệ và những lưu ý giúp nâng cao tỷ lệ thắng.</p>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card-img" src="assets/slider_1.svg" alt="Bài viết 3">
-          <div class="card-body">
-            <h3 class="card-title">Khuyến mãi nổi bật tháng này</h3>
-            <div class="card-meta">2 phút đọc • Ưu đãi</div>
-            <p class="card-text">Tổng hợp ưu đãi nổi bật dành cho hội viên mới và cũ, cách tham gia và điều kiện nhận thưởng.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      © <span id="y"></span> Hi88. Tất cả các quyền được bảo lưu.
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-  <script src="script.js"></script>
+  <div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for cat, msg in messages %}
+          <div class="flash {{cat}}">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    {% block body %}{% endblock %}
+  </div>
 </body>
 </html>
