@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Dashboard — Chào {{ username }}</h2>
+<a href="{{ url_for('logout') }}">Logout</a>
+<form method="post">
+  <label>Danh sách URL (mỗi URL 1 dòng hoặc cách nhau bằng space)</label><br/>
+  <textarea name="urls" rows="10" cols="80"></textarea><br/>
+  <label>Số ngày (1-365)</label><br/>
+  <input name="days" value="1"/><br/><br/>
+  <button type="submit">Tạo campaign</button>
+</form>
+{% endblock %}
